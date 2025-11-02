@@ -7,7 +7,6 @@
   <artifactId>app</artifactId>
   <version>1.0-SNAPSHOT</version>
   <name>evaluacion-automatizacion-pruebas</name>
-  <description>Evaluación U2 - Automatización de Pruebas (Java, Maven, JUnit, Cucumber)</description>
 
   <properties>
     <maven.compiler.source>17</maven.compiler.source>
@@ -15,11 +14,10 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <cucumber.version>7.14.0</cucumber.version>
     <junit4.version>4.13.2</junit4.version>
-    <surefire.version>3.2.5</surefire.version>
   </properties>
 
   <dependencies>
-   
+    
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
@@ -44,29 +42,26 @@
 
   <build>
     <plugins>
-      
-    <plugin>
-      <groupId>org.apache.maven.plugins</groupId>
-      <artifactId>maven-surefire-plugin</artifactId>
-      <version>3.2.5</version>
-      <configuration>
-    <includes>
-      <include>**/*Test.java</include>
-      <include>**/*Runner.java</include>
-    </includes>
-    <argLine>-Dfile.encoding=UTF-8</argLine>
-  </configuration>
-</plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.11.0</version>
+        <configuration>
+          <release>17</release>
+        </configuration>
+      </plugin>
 
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
-        <version>${surefire.version}</version>
+        <version>3.2.5</version>
         <configuration>
           <includes>
             <include>**/*Test.java</include>
             <include>**/*Runner.java</include>
           </includes>
+          <argLine>-Dfile.encoding=UTF-8</argLine>
         </configuration>
       </plugin>
     </plugins>
